@@ -11,53 +11,62 @@
 
 #include "md5.h"
 
+/*
+    node cases
+        -make root
+        -new leaf
+        -delete leaf
 
-struct Node* make_root() {
+        must recalculate after each add/subtract
+*/
+
+struct Node *make_root() {
 
     struct Node *root;
     //allocate memory
     root = (struct Node *) malloc (sizeof(struct Node));
     root->data = NULL;
-    root->height = 1;
-    root->leftNode = NULL:
+    root->leftNode = NULL;
     root->rightNode = NULL;
 
-    println("new node made");
+    printf("\nnew node made");
     return root;
 }
 
-struct Node* new_node_empty( char[] incoming_data, int height) {
+struct Node *new_node( char *incoming_data, int key) {
 
-    struct Node *leaf;
-    //allocate memory
-    leaf = (struct Node *) malloc (sizeof(struct Node));
+    //initalize and allocate memory
+    struct Node *leaf = (struct Node *) malloc (sizeof(struct Node));
+    
     leaf->data = incoming_data;
-    leaf->leftNode = NULL:
+    leaf->leftNode = NULL;
     leaf->rightNode = NULL;
 
-    println("new node made");
-
-
-    //dont just return we need to calculate tree here
-
-    //
+    printf("new node made");
 
     return leaf;
 }
 
+struct Node *insert(struct node* root, int key){
+    if
+}
+
 void del_node(struct Node *node) {
-    if( node->key != 0) {
+    //dont delete root
+    if( node->type != 0) {
         del_node(node->rightNode);
         del_node(node->leftNode);
         free( node );
+
+        //need to recalculate
     }
 }
 
 void compare_trees(struct Node *node_one, struct Node *node_two) {
-    if(node_one->enc == node_two->enc) {
-        println("Trees are the same");
+    if( strcmp(node_one->data,node_two->data) ) {
+        printf("Trees are the same");
     } else  {
-        println("The tree has been changed");
+        printf("The tree has been changed");
     }
 }
 
