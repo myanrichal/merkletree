@@ -2,20 +2,21 @@
 // #define Node.h
 
 struct Node {
-    int key;        //tells me if it is a root; duplicate; or leaf; how many children it has
-                        // key = 2 - two free spots
-                        // key = 1 - one free spot
-                        // key = 0 - complete, no free spot
+    // int key;        //tells me if it is a root; duplicate; or leaf; how many children it has
+    //                     // key = 2 - two free spots
+    //                     // key = 1 - one free spot
+    //                     // key = 0 - complete, no free spot
+    // int height;
     char* data;
-    struct Node *leftNode;
-    struct Node *rightNode;
+    struct Node **leftNode;
+    struct Node **rightNode;
 };
 
 // struct Node;
 // struct Node *root;
 
 /*
-   on start root 
+   on start root  
                     root
                     /  \ 
     insert;
@@ -50,13 +51,10 @@ struct Node {
     l7  \      l7
 
 */
-struct Node *make_root();
 
-struct Node *insert(struct node* root, int key)
-struct Node  *new_node( char*, int );
-void del_node( struct Node* );
-
-struct node *search( int, struct Node* );
+// struct Node *insert(struct node* root, int key)
+// struct Node  *new_node( char*, int );
+// void del_node( struct Node* );
 
 
 
