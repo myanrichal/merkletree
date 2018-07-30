@@ -28,7 +28,7 @@ struct Node* new_node( char *incoming_data) {
 
     //initalize and allocate memory
     struct Node *leaf = (struct Node *) malloc (sizeof(struct Node));
-    leaf->data = malloc (MD5_SIZE * sizeof (char));
+    leaf->data = malloc (MD5_SIZE +1 * sizeof (char));
     leaf->leftNode = malloc (sizeof (struct Node));
     leaf->rightNode = malloc (sizeof (struct Node));
 
