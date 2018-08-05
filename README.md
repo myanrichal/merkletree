@@ -1,3 +1,4 @@
+
 Simple C Merkle Tree
 
 Compile main.c 
